@@ -3,6 +3,10 @@ import "mocha";
 import { generateList } from "../src/index";
 
 describe("generateList", function() {
+  it("generateList undefined", () => {
+    expect(JSON.stringify(generateList(10))).to.equal(JSON.stringify([undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]));
+  });
+
   it("generateList number", () => {
     expect(JSON.stringify(generateList(10, i => i))).to.equal(JSON.stringify([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
   });
